@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		9F3EBDA91CB11930007219D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3EBDA81CB11930007219D7 /* AppDelegate.swift */; };
-		9F3EBDAB1CB11930007219D7 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3EBDAA1CB11930007219D7 /* FirstViewController.swift */; };
 		9F3EBDAD1CB11930007219D7 /* TimersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3EBDAC1CB11930007219D7 /* TimersViewController.swift */; };
 		9F3EBDB01CB11930007219D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F3EBDAE1CB11930007219D7 /* Main.storyboard */; };
 		9F3EBDB21CB11930007219D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F3EBDB11CB11930007219D7 /* Assets.xcassets */; };
@@ -34,7 +33,6 @@
 /* Begin PBXFileReference section */
 		9F3EBDA51CB1192F007219D7 /* BakersApprentice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BakersApprentice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F3EBDA81CB11930007219D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9F3EBDAA1CB11930007219D7 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		9F3EBDAC1CB11930007219D7 /* TimersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimersViewController.swift; sourceTree = "<group>"; };
 		9F3EBDAF1CB11930007219D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9F3EBDB11CB11930007219D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -93,7 +91,6 @@
 				9F3EBDCE1CB13563007219D7 /* Extensions */,
 				9F3EBDD61CB13AEB007219D7 /* Timers */,
 				9F3EBDA81CB11930007219D7 /* AppDelegate.swift */,
-				9F3EBDAA1CB11930007219D7 /* FirstViewController.swift */,
 				9F3EBDAE1CB11930007219D7 /* Main.storyboard */,
 				9F3EBDB11CB11930007219D7 /* Assets.xcassets */,
 				9F3EBDB31CB11930007219D7 /* LaunchScreen.storyboard */,
@@ -246,7 +243,6 @@
 				9F3EBDD31CB1361D007219D7 /* DateFormatter.swift in Sources */,
 				9F3EBDCB1CB12A80007219D7 /* Timer.swift in Sources */,
 				9F3EBDA91CB11930007219D7 /* AppDelegate.swift in Sources */,
-				9F3EBDAB1CB11930007219D7 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
