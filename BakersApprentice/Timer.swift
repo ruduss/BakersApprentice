@@ -8,18 +8,22 @@
 
 import UIKit
 
-class Timer : NSObject {
+@objc protocol TimerProtocol {
+    var name: String {get set}
+    var start: NSDate {get set}
+    var end: NSDate {get set}
+}
 
-    var id: Int
+class Timer : NSObject, TimerProtocol {
+
     var name: String
     var start: NSDate
     var end: NSDate
     
-    override init() {
-        self.id = 1
-        self.name = ""
-        self.start = NSDate()
-        self.end = NSDate()
+    init(name: String, start: NSDate, end: NSDate) {
+        self.name = name
+        self.start = start
+        self.end = end
     }
 
 }

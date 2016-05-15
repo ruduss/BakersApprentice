@@ -8,15 +8,14 @@
 
 import UIKit
 
-class TimersViewController: UIViewController {
+class TimersViewController: UITableViewController {
 
-    @IBOutlet weak var tblTimers: UITableView!
     
+    @IBOutlet var tblTimers: UITableView!
     let timersViewModel = TimersViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tblTimers.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         tblTimers.dataSource = timersViewModel
         tblTimers.delegate = timersViewModel
     }
@@ -24,12 +23,6 @@ class TimersViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-
-    
-    @IBAction func InsertButtonPressed(sender: AnyObject) {
-        timersViewModel.add()
-        tblTimers.reloadData()
     }
 
 }
