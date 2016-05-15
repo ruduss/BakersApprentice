@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -28,16 +28,13 @@
                                                 <rect key="frame" x="240" y="16" width="53" height="21"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iCH-pv-1kp">
                                                 <rect key="frame" x="515" y="11" width="30" height="30"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Add"/>
-                                                <connections>
-                                                    <segue destination="NzS-l3-qar" kind="showDetail" identifier="toTimerDetails" id="AYL-5b-fhN"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -76,7 +73,7 @@
             </objects>
             <point key="canvasLocation" x="717" y="405"/>
         </scene>
-        <!--Title-->
+        <!--Add Timer-->
         <scene sceneID="HKu-mj-mwl">
             <objects>
                 <viewController storyboardIdentifier="TimersDetailStoryboard" id="OhK-z5-o95" customClass="TimersDetailViewController" sceneMemberID="viewController">
@@ -109,7 +106,7 @@
                             <constraint firstItem="3WM-XU-QxE" firstAttribute="bottom" secondItem="TrM-Us-kzp" secondAttribute="top" id="yf3-sG-IPU"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="u3Q-mL-NuA">
+                    <navigationItem key="navigationItem" title="Add Timer" id="u3Q-mL-NuA">
                         <barButtonItem key="backBarButtonItem" title="Back" id="FXP-1f-4pO"/>
                     </navigationItem>
                 </viewController>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F1D07051CC402D2000C0712 /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1D07041CC402D2000C0712 /* Calendar.swift */; };
 		9F3EBDA91CB11930007219D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3EBDA81CB11930007219D7 /* AppDelegate.swift */; };
 		9F3EBDAD1CB11930007219D7 /* TimersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3EBDAC1CB11930007219D7 /* TimersViewController.swift */; };
 		9F3EBDB01CB11930007219D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F3EBDAE1CB11930007219D7 /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9F1D07041CC402D2000C0712 /* Calendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
 		9F3EBDA51CB1192F007219D7 /* BakersApprentice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BakersApprentice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F3EBDA81CB11930007219D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F3EBDAC1CB11930007219D7 /* TimersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimersViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				9F3EBDD21CB1361D007219D7 /* DateFormatter.swift */,
+				9F1D07041CC402D2000C0712 /* Calendar.swift */,
 			);
 			name = CustomClasses;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 				9F3EBDD01CB13577007219D7 /* NSDate+Extensions.swift in Sources */,
 				9F3EBDCD1CB131E4007219D7 /* TimersViewModel.swift in Sources */,
 				9F3EBDAD1CB11930007219D7 /* TimersViewController.swift in Sources */,
+				9F1D07051CC402D2000C0712 /* Calendar.swift in Sources */,
 				9F3EBDD51CB13678007219D7 /* NSDateFormatter.swift in Sources */,
 				9F3EBDD31CB1361D007219D7 /* DateFormatter.swift in Sources */,
 				9F3EBDCB1CB12A80007219D7 /* Timer.swift in Sources */,
@@ -434,6 +438,7 @@
 				9F3EBDC61CB11930007219D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9F3EBDC71CB11930007219D7 /* Build configuration list for PBXNativeTarget "BakersApprenticeTests" */ = {
 			isa = XCConfigurationList;
@@ -442,6 +447,7 @@
 				9F3EBDC91CB11930007219D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -18,6 +18,10 @@ class TimersViewModel : NSObject {
     
     func add() {
         let timer = Timer()
+        timer.id = Int(arc4random())
+        timer.name = "Bob \(timer.id)"
+        timer.start = NSDate()
+        timer.end = NSDate().addMinutes(40)
         timers.append(timer)
     }
     
