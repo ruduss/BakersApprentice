@@ -30,15 +30,23 @@ class TimersViewModel : NSObject {
 
 extension TimersViewModel: UITableViewDataSource {
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return timers.count
+        let adjustment = tableView.editing ? 1 : 0
+        return timers.count + adjustment
     }
+    
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("TimerCell", forIndexPath: indexPath) as! TimersTableViewCell
         let currentTimer = timers[indexPath.row]
-        let df: DateFormatter = DateFormatter()
-        df.setMyDateFormat("HH:mm:ss")
-        cell.configure(currentTimer)
+        
+        if indexPath.row >= timers.count && tableView.editing {
+            let newTimer =  Timer(name: "NewBob", start: NSDate(), end: NSDate().addMinutes(40))
+            cell.configure(TimersTableViewCellModel(timer: newTimer))
+        } else {
+            let df: DateFormatter = DateFormatter()
+            df.setMyDateFormat("HH:mm:ss")
+            cell.configure(currentTimer)
+        }
         return cell
     }
     
@@ -49,9 +57,10 @@ extension TimersViewModel: UITableViewDataSource {
     func tableView(tableView: UITableView, indentationLevelForRowAtIndexPath indexPath: NSIndexPath) -> Int {
         return timers.count
     }
+    
 }
 
 extension TimersViewModel: UITableViewDelegate {
 
-
+    
 }

@@ -49,4 +49,6 @@ class TimersTableViewCell:UITableViewCell {
         
         self.timerNameLabel.text = cellModel.timer.name
     }
+    
+    
 }
