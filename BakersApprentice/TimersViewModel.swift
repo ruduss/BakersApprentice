@@ -26,6 +26,10 @@ class TimersViewModel : NSObject {
         timers.append(t2)
     }
     
+    func add(timer: Timer) {
+        timers.append(TimersTableViewCellModel(timer: timer))
+    }
+    
 }
 
 extension TimersViewModel: UITableViewDataSource {

@@ -12,6 +12,10 @@ class TimersViewController: UITableViewController {
 
     @IBOutlet var tblTimers: UITableView!
     
+    @IBOutlet weak var newTimerTextField: UITextField!
+    
+    @IBOutlet weak var timerName: UITextField!
+    
     let timersViewModel = TimersViewModel()
     
     override func viewDidLoad() {
@@ -24,6 +28,15 @@ class TimersViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func AddTimer(sender: AnyObject) {
+        if let time = Int(newTimerTextField.text!), let name = timerName.text {
+            let timer = Timer(name: name, start: NSDate(), end: NSDate().addMinutes(time))
+            timersViewModel.add(timer)
+            tblTimers.reloadData()
+        }
+
     }
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -41,13 +54,12 @@ class TimersViewController: UITableViewController {
     override func setEditing(editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
         if editing {
-            //tblTimers.beginUpdates()
-            let indexPath = NSIndexPath(forRow: timersViewModel.timers.count, inSection: 0)
+           // tblTimers.beginUpdates()
+            tblTimers.setEditing(true, animated: true)
             let newTimer = Timer(name: "", start: NSDate(), end: NSDate().addMinutes(40))
             timersViewModel.timers.append(TimersTableViewCellModel(timer: newTimer))
-            //tblTimers.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
-            //tblTimers.endUpdates()
-            tblTimers.setEditing(true, animated: true)
+           // tblTimers.endUpdates()
+            
         } else {
             tblTimers.setEditing(false, animated: true)
         }

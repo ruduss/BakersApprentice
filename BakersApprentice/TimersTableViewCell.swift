@@ -48,6 +48,7 @@ class TimersTableViewCell:UITableViewCell {
         self.cellModel = cellModel
         
         self.timerNameLabel.text = cellModel.timer.name
+        self.timerStartDateLabel.text = String(cellModel.timer.start)
     }
     
     
