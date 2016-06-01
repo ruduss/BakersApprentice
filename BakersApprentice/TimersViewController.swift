@@ -32,7 +32,7 @@ class TimersViewController: UITableViewController {
     
     @IBAction func AddTimer(sender: AnyObject) {
         if let time = Int(newTimerTextField.text!), let name = timerName.text {
-            let timer = Timer(name: name, start: NSDate(), end: NSDate().addMinutes(time))
+            let timer = TimerSettings(name: name, start: NSDate(), end: NSDate().addMinutes(time))
             timersViewModel.add(timer)
             tblTimers.reloadData()
         }
@@ -45,8 +45,8 @@ class TimersViewController: UITableViewController {
             tblTimers.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         }
         else if editingStyle == .Insert {
-            let newTimer = Timer(name: "", start: NSDate(), end: NSDate().addMinutes(40))
-            timersViewModel.timers.append(TimersTableViewCellModel(timer: newTimer))
+            let newTimer = TimerSettings(name: "", start: NSDate(), end: NSDate().addMinutes(40))
+            timersViewModel.timers.append(TimersTableViewCellModel(timerSettings: newTimer))
             tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
         }
     }
@@ -54,11 +54,9 @@ class TimersViewController: UITableViewController {
     override func setEditing(editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
         if editing {
-           // tblTimers.beginUpdates()
             tblTimers.setEditing(true, animated: true)
-            let newTimer = Timer(name: "", start: NSDate(), end: NSDate().addMinutes(40))
-            timersViewModel.timers.append(TimersTableViewCellModel(timer: newTimer))
-           // tblTimers.endUpdates()
+            let newTimer = TimerSettings(name: "", start: NSDate(), end: NSDate().addMinutes(40))
+            timersViewModel.timers.append(TimersTableViewCellModel(timerSettings: newTimer))
             
         } else {
             tblTimers.setEditing(false, animated: true)

@@ -9,7 +9,7 @@
 import UIKit
 
 protocol TimersTableViewCellModelProtocol {
-    var timer: Timer { get set}
+    var timerSettings: TimerSettings { get set }
 }
 
 protocol TimersTableViewCellDelegate {
@@ -17,11 +17,16 @@ protocol TimersTableViewCellDelegate {
 }
 
 class TimersTableViewCellModel: NSObject, TimersTableViewCellModelProtocol {
-    var timer: Timer
+    var timerSettings: TimerSettings
+   
     
-    init(timer: Timer) {
-        self.timer = timer
+    init(timerSettings: TimerSettings) {
+        self.timerSettings = timerSettings
+        super.init()
+        
     }
+    
+
 }
 
 class TimersTableViewCell:UITableViewCell {
@@ -34,22 +39,24 @@ class TimersTableViewCell:UITableViewCell {
     var cellModel: TimersTableViewCellModelProtocol?
     var delegate: TimersTableViewCellDelegate?
     
-    var timer: Timer! {
-        didSet {
-            timerNameLabel.text = timer.name
-        }
-    }
+    var currentTimer: NSTimer = NSTimer()
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
     }
     
     func configure(cellModel: TimersTableViewCellModelProtocol) {
         self.cellModel = cellModel
-        
-        self.timerNameLabel.text = cellModel.timer.name
-        self.timerStartDateLabel.text = String(cellModel.timer.start)
+        self.timerNameLabel.text = cellModel.timerSettings.name
+        self.timerStartDateLabel.text = String(cellModel.timerSettings.timerCounter)
+        self.currentTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
     }
     
+    func updateTimer() {
+        if (self.cellModel != nil) && self.cellModel?.timerSettings.timerCounter > 0 {
+            self.cellModel!.timerSettings.timerCounter = self.cellModel!.timerSettings.timerCounter - 1
+        }
+    }
     
 }

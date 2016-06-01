@@ -14,7 +14,7 @@
 		9F3EBDB21CB11930007219D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F3EBDB11CB11930007219D7 /* Assets.xcassets */; };
 		9F3EBDB51CB11930007219D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F3EBDB31CB11930007219D7 /* LaunchScreen.storyboard */; };
 		9F3EBDC01CB11930007219D7 /* BakersApprenticeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3EBDBF1CB11930007219D7 /* BakersApprenticeTests.swift */; };
-		9F3EBDCB1CB12A80007219D7 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3EBDCA1CB12A80007219D7 /* Timer.swift */; };
+		9F3EBDCB1CB12A80007219D7 /* TimerSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3EBDCA1CB12A80007219D7 /* TimerSettings.swift */; };
 		9F3EBDCD1CB131E4007219D7 /* TimersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3EBDCC1CB131E4007219D7 /* TimersViewModel.swift */; };
 		9F3EBDD01CB13577007219D7 /* NSDate+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3EBDCF1CB13577007219D7 /* NSDate+Extensions.swift */; };
 		9F3EBDD31CB1361D007219D7 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3EBDD21CB1361D007219D7 /* DateFormatter.swift */; };
@@ -44,7 +44,7 @@
 		9F3EBDBB1CB11930007219D7 /* BakersApprenticeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BakersApprenticeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F3EBDBF1CB11930007219D7 /* BakersApprenticeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BakersApprenticeTests.swift; sourceTree = "<group>"; };
 		9F3EBDC11CB11930007219D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9F3EBDCA1CB12A80007219D7 /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		9F3EBDCA1CB12A80007219D7 /* TimerSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerSettings.swift; sourceTree = "<group>"; };
 		9F3EBDCC1CB131E4007219D7 /* TimersViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimersViewModel.swift; sourceTree = "<group>"; };
 		9F3EBDCF1CB13577007219D7 /* NSDate+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Extensions.swift"; sourceTree = "<group>"; };
 		9F3EBDD21CB1361D007219D7 /* DateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
@@ -136,7 +136,7 @@
 				9F3EBDAC1CB11930007219D7 /* TimersViewController.swift */,
 				9F3EBDCC1CB131E4007219D7 /* TimersViewModel.swift */,
 				9F6E871B1CE8DC9700487B15 /* TimersTableViewCell.swift */,
-				9F3EBDCA1CB12A80007219D7 /* Timer.swift */,
+				9F3EBDCA1CB12A80007219D7 /* TimerSettings.swift */,
 			);
 			name = Timers;
 			sourceTree = "<group>";
@@ -249,7 +249,7 @@
 				9F3EBDD51CB13678007219D7 /* NSDateFormatter.swift in Sources */,
 				9F6E871C1CE8DC9700487B15 /* TimersTableViewCell.swift in Sources */,
 				9F3EBDD31CB1361D007219D7 /* DateFormatter.swift in Sources */,
-				9F3EBDCB1CB12A80007219D7 /* Timer.swift in Sources */,
+				9F3EBDCB1CB12A80007219D7 /* TimerSettings.swift in Sources */,
 				9F3EBDA91CB11930007219D7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

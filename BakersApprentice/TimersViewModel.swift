@@ -18,16 +18,16 @@ class TimersViewModel : NSObject {
     }
     
     func add() {
-        let timer = Timer(name: "Bob", start: NSDate(), end: NSDate().addMinutes(40))
-        let t = TimersTableViewCellModel(timer: timer)
+        let timer = TimerSettings(name: "Bob", start: NSDate(), end: NSDate().addMinutes(40))
+        let t = TimersTableViewCellModel(timerSettings: timer)
         timers.append(t)
-        let timer2 = Timer(name: "Bobette", start: NSDate().addDays(1), end: NSDate().addDays(1).addMinutes(40))
-        let t2 = TimersTableViewCellModel(timer: timer2)
+        let timer2 = TimerSettings(name: "Bobette", start: NSDate().addDays(1), end: NSDate().addDays(1).addMinutes(40))
+        let t2 = TimersTableViewCellModel(timerSettings: timer2)
         timers.append(t2)
     }
     
-    func add(timer: Timer) {
-        timers.append(TimersTableViewCellModel(timer: timer))
+    func add(timer: TimerSettings) {
+        timers.append(TimersTableViewCellModel(timerSettings: timer))
     }
     
 }
@@ -44,8 +44,8 @@ extension TimersViewModel: UITableViewDataSource {
         let currentTimer = timers[indexPath.row]
         
         if indexPath.row >= timers.count && tableView.editing {
-            let newTimer =  Timer(name: "NewBob", start: NSDate(), end: NSDate().addMinutes(40))
-            cell.configure(TimersTableViewCellModel(timer: newTimer))
+            let newTimer =  TimerSettings(name: "NewBob", start: NSDate(), end: NSDate().addMinutes(40))
+            cell.configure(TimersTableViewCellModel(timerSettings: newTimer))
         } else {
             let df: DateFormatter = DateFormatter()
             df.setMyDateFormat("HH:mm:ss")
