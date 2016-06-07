@@ -9,26 +9,67 @@
         <scene sceneID="EJE-JI-5fh">
             <objects>
                 <tableViewController id="U2P-i2-mf3" customClass="TimersViewController" customModule="BakersApprentice" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="KWH-De-Pb7">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="57" sectionHeaderHeight="28" sectionFooterHeight="28" id="KWH-De-Pb7">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="v7X-LX-YZ8" userLabel="AddTimerView">
+                            <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Time" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cZm-ZH-g8g" userLabel="NewTimerTextBox">
+                                    <rect key="frame" x="212" y="0.0" width="147" height="41"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="100" id="ZOC-7W-wks"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Sv-M7-V0h" userLabel="TimerName">
+                                    <rect key="frame" x="20" y="0.0" width="178" height="41"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="100" id="CNR-kZ-teV"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B3e-Nh-n4H">
+                                    <rect key="frame" x="367" y="-1" width="46" height="30"/>
+                                    <state key="normal" title="Add"/>
+                                    <connections>
+                                        <action selector="AddTimer:" destination="U2P-i2-mf3" eventType="touchUpInside" id="t5A-Az-xOs"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="cZm-ZH-g8g" secondAttribute="bottom" constant="3" id="1Al-hY-bPZ"/>
+                                <constraint firstAttribute="bottom" secondItem="2Sv-M7-V0h" secondAttribute="bottom" constant="3" id="5en-qX-r5y"/>
+                                <constraint firstItem="cZm-ZH-g8g" firstAttribute="top" secondItem="v7X-LX-YZ8" secondAttribute="top" id="DaL-o9-b1k"/>
+                                <constraint firstItem="B3e-Nh-n4H" firstAttribute="leading" secondItem="cZm-ZH-g8g" secondAttribute="trailing" constant="3" id="M7Z-vP-uNq"/>
+                                <constraint firstItem="cZm-ZH-g8g" firstAttribute="leading" secondItem="2Sv-M7-V0h" secondAttribute="trailing" constant="3" id="Qg8-KT-Ryx"/>
+                                <constraint firstItem="B3e-Nh-n4H" firstAttribute="top" secondItem="v7X-LX-YZ8" secondAttribute="top" constant="3" id="jYO-CU-mpy"/>
+                                <constraint firstItem="2Sv-M7-V0h" firstAttribute="top" secondItem="v7X-LX-YZ8" secondAttribute="top" id="nCA-Sf-H0U"/>
+                                <constraint firstAttribute="bottom" secondItem="B3e-Nh-n4H" secondAttribute="bottom" constant="3" id="rRM-lE-dIi"/>
+                                <constraint firstItem="2Sv-M7-V0h" firstAttribute="leading" secondItem="v7X-LX-YZ8" secondAttribute="leading" constant="3" id="wyk-uS-0lY"/>
+                            </constraints>
+                        </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" showsReorderControl="YES" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="TimerCell" id="pVL-GS-8ZE" customClass="TimersTableViewCell" customModule="BakersApprentice" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" showsReorderControl="YES" indentationWidth="10" reuseIdentifier="TimerCell" rowHeight="57" id="pVL-GS-8ZE" customClass="TimersTableViewCell" customModule="BakersApprentice" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="136" width="600" height="57"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pVL-GS-8ZE" id="JRF-Ao-2JF">
-                                    <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="57"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KLX-Ig-QOR">
-                                            <rect key="frame" x="68" y="8" width="42" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KLX-Ig-QOR">
+                                            <rect key="frame" x="8" y="0.0" width="237" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BDu-xB-TzL">
-                                            <rect key="frame" x="328" y="7" width="42" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BDu-xB-TzL">
+                                            <rect key="frame" x="204" y="8" width="388" height="41"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
@@ -50,12 +91,14 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="xLu-R9-Ty9"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="newTimerTextField" destination="cZm-ZH-g8g" id="zqn-Pb-eVM"/>
                         <outlet property="tblTimers" destination="KWH-De-Pb7" id="VNX-Kz-pRg"/>
+                        <outlet property="timerName" destination="2Sv-M7-V0h" id="BaK-uJ-8GX"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1c6-UU-INY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2003" y="-225"/>
+            <point key="canvasLocation" x="1993" y="-220"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Kkr-vP-FMn">
