@@ -20,8 +20,8 @@ class TimersViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tblTimers.dataSource = timersViewModel
-        tblTimers.delegate = timersViewModel
+        tblTimers.dataSource = self
+        tblTimers.delegate = self
         navigationItem.rightBarButtonItem = editButtonItem()
     }
 
@@ -51,12 +51,43 @@ class TimersViewController: UITableViewController {
         }
     }
     
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("TimerCell", forIndexPath: indexPath) as! TimersTableViewCell
+        let currentTimer = timersViewModel.timers[indexPath.row]
+        
+        if indexPath.row >= timersViewModel.timers.count && tableView.editing {
+            let newTimer =  TimerSettings(name: "NewBob", start: NSDate(), end: NSDate().addMinutes(40))
+            cell.configure(TimersTableViewCellModel(timerSettings: newTimer))
+        } else {
+            let df: DateFormatter = DateFormatter()
+            df.setMyDateFormat("HH:mm:ss")
+            cell.configure(currentTimer)
+        }
+        return cell
+    }
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let adjustment = tableView.editing ? 1 : 0
+        return timersViewModel.timers.count + adjustment
+    }
+    
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    override func tableView(tableView: UITableView, indentationLevelForRowAtIndexPath indexPath: NSIndexPath) -> Int {
+        return timersViewModel.timers.count
+    }
+
+    
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
     override func setEditing(editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
         if editing {
             tblTimers.setEditing(true, animated: true)
-            let newTimer = TimerSettings(name: "", start: NSDate(), end: NSDate().addMinutes(40))
-            timersViewModel.timers.append(TimersTableViewCellModel(timerSettings: newTimer))
             
         } else {
             tblTimers.setEditing(false, animated: true)
@@ -89,7 +120,6 @@ class TimersViewController: UITableViewController {
         let movedObject = timersViewModel.timers[sourceIndexPath.row]
         timersViewModel.timers.removeAtIndex(sourceIndexPath.row)
         timersViewModel.timers.insert(movedObject, atIndex: destinationIndexPath.row)
-        self.tableView.reloadRowsAtIndexPaths([destinationIndexPath], withRowAnimation: .Automatic)
     }
     
     override func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
